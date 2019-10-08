@@ -54,3 +54,7 @@ I prefer to develop using TDD methodology. Hence, my steps for development.
 1. Ready to push? Rebase your branch on the development branch.
 1. Push to origin. Since you have rebased the pre-commit hook will run all test
    again to ensure everything still working ok.
+
+## Configuration options
+
+TODO
