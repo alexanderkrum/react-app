@@ -1,0 +1,23 @@
+{
+  "extends": ["react-app","prettier","prettier/react"],
+  "parser": "babel-eslint",
+  "env": {
+    "jest": true
+  },
+  "rules": {
+    "react/prop-types": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ]
+  },
+  "plugins": [
+    "prettier",
+    "jest"
+  ]
+}
