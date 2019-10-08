@@ -9,5 +9,5 @@ it('renders without crashing', () => {
 
 it('missing sub header', () => {
   const { getByText } = render(<App />)
-  expect(getByText('Missing'))
+  expect(getByText('World'))
 })
