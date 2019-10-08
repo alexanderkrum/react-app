@@ -62,5 +62,5 @@ files. But for my taste it's the basic config is enough.
 
 ## Styles
 
-No styles if you want create your own setup. I prefer to use inline styles or
-styled-components.
+No styles, if you want then create your own setup. I prefer to use inline styles
+or styled-components.
