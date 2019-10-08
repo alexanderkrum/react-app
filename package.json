@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "prettier": "^1.18.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-scripts": "3.2.0"
@@ -10,11 +11,41 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --coverage --silent",
+    "eject": "react-scripts eject",
+    "clean:test": "rm -rf coverage test",
+    "test:ci": "jest test --coverage --silent",
+    "lint": "eslint src",
+    "format": "yarn run prettier -- --write",
+    "prettier": "prettier App.js \"**/src/**/*.+(js|jsx|json)\" \"**/__tests__/**/*.+(js|jsx|json)\"",
+    "validate": "yarn run lint && yarn run prettier -- --list-different"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run validate",
+      "pre-push": "npm run test -- --coverage && npm run clean:test"
+    }
   },
   "browserslist": {
     "production": [
@@ -27,5 +58,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/react": "^9.3.0"
   }
 }
