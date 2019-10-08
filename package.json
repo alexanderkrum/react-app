@@ -10,10 +10,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage --silent",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "clean:test": "rm -rf coverage test",
-    "test:ci": "jest test --coverage --silent",
+    "test:ci": "CI=true yarn test --coverage --silent",
     "lint": "eslint src",
     "format": "yarn run prettier -- --write",
     "prettier": "prettier App.js \"**/src/**/*.+(js|jsx|json)\" \"**/__tests__/**/*.+(js|jsx|json)\"",
@@ -53,7 +53,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "npm run test -- --coverage && yarn clean:test"
+      "pre-push": "yarn test:ci && yarn clean:test"
     }
   },
   "browserslist": {
