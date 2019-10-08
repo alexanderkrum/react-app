@@ -57,4 +57,10 @@ I prefer to develop using TDD methodology. Hence, my steps for development.
 
 ## Configuration options
 
-TODO
+For the config you have got plenty of options. You can extend all the config
+files. But for my taste it's the basic config is enough.
+
+## Styles
+
+No styles if you want create your own setup. I prefer to use inline styles or
+styled-components.
