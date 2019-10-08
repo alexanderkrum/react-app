@@ -14,10 +14,13 @@
           ".jsx"
         ]
       }
-    ]
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
   "plugins": [
     "prettier",
-    "jest"
+    "jest",
+    "react-hooks"
   ]
 }
