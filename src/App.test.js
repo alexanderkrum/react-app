@@ -6,3 +6,8 @@ it('renders without crashing', () => {
   const { getByText } = render(<App />)
   expect(getByText('Hello'))
 })
+
+it('missing sub header', () => {
+  const { getByText } = render(<App />)
+  expect(getByText('Missing'))
+})
